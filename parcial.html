@@ -9,131 +9,125 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background-image: url('https://www.example.com/animal_background.jpg'); /* Reemplaza con un URL válido */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
         }
         header {
-            background: #006699;
-            color: #fff;
-            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
             text-align: center;
         }
-        nav {
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        main {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .donate {
             text-align: center;
-            background: #004466;
-            padding: 0.5rem 0;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            width: 90%;
-            margin: 1rem auto;
-        }
-        section {
-            margin-bottom: 2rem;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table th, table td {
-            border: 1px solid #ccc;
-            padding: 0.5rem;
-            text-align: left;
-        }
-        footer {
-            background: #004466;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-        .donate-btn {
+        .donate button {
             background-color: #28a745;
             color: white;
-            padding: 0.75rem 1.5rem;
-            text-align: center;
-            font-size: 1.2rem;
+            padding: 15px 30px;
+            font-size: 1.2em;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+        }
+        .donate button:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .editable {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .editable input {
+            padding: 10px;
+            font-size: 1.2em;
+            width: 100px;
+            text-align: center;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .donate-btn:hover {
-            background-color: #218838;
+        .chart {
+            margin: 20px auto;
+            width: 200px;
+            height: 200px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Sistema Inteligente de Monitoreo y Filtración de Agua</h1>
-        <p>Un proyecto para garantizar agua limpia en Plato, Magdalena</p>
-    </header>
 
-    <nav>
-        <a href="#introduccion">Introducción</a>
-        <a href="#objetivos">Objetivos</a>
-        <a href="#problematica">Problemática</a>
-        <a href="#diseno">Diseño del Sistema</a>
-        <a href="#importancia">Importancia de No Contaminar</a>
-        <a href="#donaciones">Donaciones</a>
-    </nav>
+<header>
+    <h1>Sistema Inteligente de Monitoreo y Filtración de Agua</h1>
+    <h2>Plato, Magdalena</h2>
+</header>
 
-    <div class="container">
-        <section id="introduccion">
-            <h2>Introducción</h2>
-            <p>La contaminación del agua en Plato, Magdalena, representa una crisis ambiental y de salud pública. Este proyecto busca garantizar el acceso al agua limpia mediante soluciones tecnológicas innovadoras.</p>
-        </section>
+<main>
+    <!-- Sección de Introducción -->
+    <section class="section">
+        <h2>Importancia de No Contaminar el Agua</h2>
+        <p>
+            El agua es esencial para la vida y la salud de los ecosistemas. La contaminación no solo afecta 
+            a los seres humanos, sino también a la flora y fauna que dependen de este recurso. Adoptar 
+            prácticas sostenibles asegura un futuro saludable para todos los seres vivos.
+        </p>
+    </section>
 
-        <section id="objetivos">
-            <h2>Objetivo General</h2>
-            <p>Desarrollar e implementar un sistema inteligente que monitoree la calidad del agua en tiempo real, purifique automáticamente en caso de contaminación y fomente la sostenibilidad comunitaria.</p>
-        </section>
+    <!-- Sección de Donaciones -->
+    <section class="section donate">
+        <h2>Haz tu Donación</h2>
+        <p>Con tu ayuda, podemos reducir la contaminación y garantizar agua limpia para las comunidades y los ecosistemas.</p>
+        <button onclick="alert('Gracias por tu donación!')">Donar Ahora</button>
+    </section>
 
-        <section id="problematica">
-            <h2>Caracterización de la Problemática</h2>
-            <h3>Ubicación</h3>
-            <ul>
-                <li>Municipio: Plato</li>
-                <li>Región: Magdalena, Colombia</li>
-            </ul>
-            <h3>Causas Principales</h3>
-            <ol>
-                <li>Vertido incontrolado de desechos industriales y sólidos.</li>
-                <li>Infraestructura de saneamiento deficiente.</li>
-                <li>Uso excesivo de agroquímicos.</li>
-            </ol>
-        </section>
+    <!-- Sección de Contaminación del Río -->
+    <section class="section">
+        <h2>Estado de Contaminación del Río</h2>
+        <div class="chart">
+            <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                    fill="none"
+                    stroke="#ff0000"
+                    stroke-width="4"
+                    stroke-dasharray="50, 100" />
+            </svg>
+        </div>
+        <div class="editable">
+            <label for="contaminacion">Nivel de Contaminación:</label>
+            <input id="contaminacion" type="number" value="50" min="0" max="100" onchange="updateChart()" />%
+        </div>
+    </section>
+</main>
 
-        <section id="diseno">
-            <h2>Diseño del Sistema</h2>
-            <ul>
-                <li><strong>Sensores de Calidad de Agua:</strong> Medición de parámetros clave como pH, turbidez y coliformes fecales.</li>
-                <li><strong>Plataforma de Monitoreo:</strong> Aplicación web y móvil para supervisar la calidad del agua.</li>
-                <li><strong>Sistema de Filtración:</strong> Prototipo con filtros físicos y químicos.</li>
-            </ul>
-        </section>
+<footer>
+    <p>Proyecto desarrollado para promover el cuidado del agua en Plato, Magdalena.</p>
+</footer>
 
-        <section id="importancia">
-            <h2>La Importancia de No Contaminar el Agua</h2>
-            <p>El agua es un recurso vital para la vida. Su contaminación no solo afecta la salud humana, causando enfermedades como diarrea y cólera, sino que también impacta negativamente los ecosistemas, dañando la biodiversidad y reduciendo la disponibilidad de agua potable.</p>
-            <p>Adoptar prácticas sostenibles como el adecuado manejo de residuos y el uso responsable de agroquímicos puede prevenir la contaminación, garantizando un futuro más saludable para todos.</p>
-        </section>
+<script>
+    function updateChart() {
+        const input = document.getElementById('contaminacion');
+        const value = input.value;
+        const path = document.querySelector('path');
+        path.setAttribute('stroke-dasharray', ${value}, 100);
+    }
+</script>
 
-        <section id="donaciones">
-            <h2>Apoya Nuestro Proyecto</h2>
-            <p>Tu contribución puede marcar la diferencia en la lucha contra la contaminación del agua en Plato, Magdalena. Ayúdanos a implementar esta solución innovadora para garantizar agua limpia y segura para todos.</p>
-            <button class="donate-btn">Donar Ahora</button>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Sistema Inteligente de Monitoreo y Filtración de Agua. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
