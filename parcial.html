@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://www.example.com/animal_background.jpg'); /* Reemplaza con un URL válido */
+            background-image: url('https://www.example.com/animal_background.jpg'); /* Reemplazar con una URL válida */
             background-size: cover;
             background-attachment: fixed;
             color: #fff;
@@ -32,6 +32,26 @@
         }
         .donate {
             text-align: center;
+        }
+        .donate form {
+            display: inline-block;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .donate label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .donate input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         .donate button {
             background-color: #28a745;
@@ -67,6 +87,80 @@
             width: 200px;
             height: 200px;
         }
+        .contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact a {
+            background-color: #0078FF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .contact a:hover {
+            background-color: #0056b3;
+        }
+        .survey-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+        .survey-section h2 {
+            text-align: center;
+        }
+        label, input, textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .survey-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .survey-section button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 8px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 30px;
+            width: 0;
+            background-color: #4CAF50;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+            border-radius: 25px;
+        }
     </style>
 </head>
 <body>
@@ -77,56 +171,143 @@
 </header>
 
 <main>
-    <!-- Sección de Introducción -->
+    <!-- Sección ¿Quiénes somos? -->
     <section class="section">
-        <h2>Importancia de No Contaminar el Agua</h2>
+        <h2>¿Quiénes somos?</h2>
         <p>
-            El agua es esencial para la vida y la salud de los ecosistemas. La contaminación no solo afecta 
-            a los seres humanos, sino también a la flora y fauna que dependen de este recurso. Adoptar 
-            prácticas sostenibles asegura un futuro saludable para todos los seres vivos.
+            CAPESA es una empresa dedicada a desarrollar soluciones innovadoras para el monitoreo y filtración de agua, 
+            asegurando la sostenibilidad de este recurso vital para la humanidad y los ecosistemas.
+        </p>
+    </section>
+
+    <!-- Sección ODS -->
+    <section class="section">
+        <h2>ODS</h2>
+        <p>Descubre cómo las metas globales trabajan para asegurar agua limpia y saneamiento para todos.</p>
+        <div class="contact">
+            <a href="https://www.un.org/sustainabledevelopment/es/water-and-sanitation/" target="_blank">
+                Más Información sobre Agua Limpia y Saneamiento
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Funcionamiento del Prototipo -->
+    <section class="section">
+        <h2>Funcionamiento del Prototipo</h2>
+        <p>
+            Nuestro prototipo utiliza sensores de última generación para monitorear la calidad del agua en tiempo real. 
+            El sistema mide parámetros clave como turbidez, pH, y presencia de contaminantes químicos. Además, cuenta 
+            con un sistema de filtración automatizado que se activa al detectar impurezas, garantizando un agua limpia 
+            para consumo y uso en actividades esenciales.
         </p>
     </section>
 
     <!-- Sección de Donaciones -->
     <section class="section donate">
         <h2>Haz tu Donación</h2>
-        <p>Con tu ayuda, podemos reducir la contaminación y garantizar agua limpia para las comunidades y los ecosistemas.</p>
-        <button onclick="alert('Gracias por tu donación!')">Donar Ahora</button>
+        <p>Con tu ayuda, podemos reducir la contaminación y garantizar agua limpia para las comunidades.</p>
+        <p><strong>Meta de donación: $233,700,000</strong></p>
+
+        <!-- Barra de progreso -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar">0%</div>
+        </div>
+
+        <form id="donationForm">
+            <label for="donorName">Nombre del Donante:</label>
+            <input type="text" id="donorName" required />
+
+            <label for="donorDoc">Número de Documento:</label>
+            <input type="text" id="donorDoc" required />
+
+            <label for="donationAmount">Cantidad de Donación ($):</label>
+            <input type="number" id="donationAmount" min="1" required />
+
+            <button type="submit">Donar Ahora</button>
+        </form>
     </section>
 
-    <!-- Sección de Contaminación del Río -->
+    <!-- Tabla de Donaciones -->
     <section class="section">
-        <h2>Estado de Contaminación del Río</h2>
-        <div class="chart">
-            <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="#ff0000"
-                    stroke-width="4"
-                    stroke-dasharray="50, 100" />
-            </svg>
-        </div>
-        <div class="editable">
-            <label for="contaminacion">Nivel de Contaminación:</label>
-            <input id="contaminacion" type="number" value="50" min="0" max="100" onchange="updateChart()" />%
-        </div>
+        <h2>Donaciones Realizadas</h2>
+        <table id="donationTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Número de Documento</th>
+                    <th>Donación ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las donaciones -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Sección de Encuesta -->
+    <section class="survey-section">
+        <h2>Encuesta sobre la Contaminación del Agua</h2>
+        <form id="surveyForm">
+            <!-- Nombre del usuario -->
+            <label for="name">¿Cuál es tu nombre?</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Calificación del 1 al 5 -->
+            <label for="rating">¿Cómo calificarías la situación de la contaminación del agua en Plato?</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+            <!-- Sugerencias de soluciones -->
+            <label for="suggestion">¿Qué soluciones propondrías para reducir la contaminación del agua?</label>
+            <textarea id="suggestion" name="suggestion" rows="4" required></textarea>
+
+            <button type="submit">Enviar Encuesta</button>
+        </form>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contact">
+        <a href="https://wa.me/573137755038" target="_blank">
+            Contáctanos a través de WhatsApp
+        </a>
     </section>
 </main>
 
 <footer>
-    <p>Proyecto desarrollado para promover el cuidado del agua en Plato, Magdalena.</p>
+    <p>&copy; 2024 CAPESA - Todos los derechos reservados</p>
 </footer>
 
 <script>
-    function updateChart() {
-        const input = document.getElementById('contaminacion');
-        const value = input.value;
-        const path = document.querySelector('path');
-        path.setAttribute('stroke-dasharray', ${value}, 100);
-    }
+    // Lógica para agregar donaciones a la tabla y actualizar la barra de progreso
+    const donationForm = document.getElementById('donationForm');
+    const donationTable = document.getElementById('donationTable').getElementsByTagName('tbody')[0];
+    const progressBar = document.getElementById('progressBar');
+    const goal = 233700000;
+
+    let totalDonations = 0;
+
+    donationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const donorName = document.getElementById('donorName').value;
+        const donorDoc = document.getElementById('donorDoc').value;
+        const donationAmount = parseInt(document.getElementById('donationAmount').value);
+
+        totalDonations += donationAmount;
+
+        // Actualizar la tabla de donaciones
+        const row = donationTable.insertRow();
+        row.insertCell(0).textContent = donorName;
+        row.insertCell(1).textContent = donorDoc;
+        row.insertCell(2).textContent = `$${donationAmount.toLocaleString()}`;
+
+        // Actualizar la barra de progreso
+        const progress = (totalDonations / goal) * 100;
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = Math.round(progress) + '%';
+
+        // Limpiar formulario
+        donationForm.reset();
+    });
 </script>
 
 </body>
